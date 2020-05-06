@@ -1,0 +1,273 @@
+
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Hey There, Artist!!</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href='{% static "style_transfer/css/base.css" %}'>
+  <!--   <link rel="stylesheet" href="css/vendor.css"> -->
+    <link rel="stylesheet" href='{% static "style_transfer/css/main1.css" %}'>
+    <link rel="stylesheet" href='{% static "style_transfer/css/main.css" %}'>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <!--   <link rel="stylesheet" href="css/vendor.css"> -->
+    <!-- <link rel="stylesheet" href='{% static "style_transfer/css/main1.css" %}'> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+<style>
+    /*div.mine {
+      width: 20px;
+      height: 25px;
+      align-self: : center;
+
+    }*/
+    div.once_more {
+      position: relative;
+      
+      margin-left: auto;
+      margin-right: auto;
+      align-items: center;
+      border: 3px solid #ccc;
+      height: 83px;
+      width: 320px;
+      z-index: 10;
+    }
+
+     div.once_more input {
+      position: relative;
+      left: 100px;
+      right:400px;
+      /*margin-left: auto;
+      margin-right: auto;*/
+      left: 45px;
+      /*right: 50px;*/
+      align-content:center;
+      align-self: center;
+      border: 3px solid #ccc;
+      height: 60px;
+      width: 600px;
+    }
+    div.once_more:hover {
+  background-color:#FFFFFF;
+}
+    div.dood {
+      margin-left: auto;
+      margin-right: auto;
+      align-content: center;
+      /*left: 500px;*/
+      /*border: 3px solid #ccc;*/
+      height: 83px;
+      width: 21%;
+    }
+   /* div.mine input {
+      /*width: 20px;*/
+      /*height: 25px;*/
+      /*align-self: : center;*/
+
+
+    /*}*/
+    /*div.stay {*/
+      /*top:500px;*/
+      /*float: left;*/
+    /*}*/
+    div.gallery {
+  margin: 5px;
+  border: 5px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 200%;
+  height: 200%;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color:white;
+}
+div.submit_bottom
+{
+ /*position:absolute;*/
+ clear: left;
+ margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+      /*border: 3px solid #ccc;*/
+  height: 85px;
+  width: 320PX;
+  /*bottom:10px;
+  left:10px;
+  clear: left;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;*/
+}
+/*div.submit_bottom input
+{
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}*/
+</style>
+
+</head>
+
+<body id="top" >
+    <section id="home" class="s-home target-section" data-parallax="scroll"  data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+          <div class="home-content">
+            <div class="row home-content__main" style="margin-left:  auto; margin-right: auto; text-align: center;">
+               <h1 style="color: white;">Upload your sketch</h1>
+               <br>
+                <div class="home-content__buttons" style= "text-align: center;">
+                  <form action='.' method='POST' enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    <!-- form is called from views.py -->
+                    {{form}} 
+                        <br>
+                        <br>
+                    {{style_form}}
+                        <!-- below we want to add another  -->
+                        <!-- {% for obj in list %}
+                        <div class="gallery">
+                          
+                         <img src="{{obj.Stylefile.url}}" onclick="foo({{obj.Style_num}})" style= "height:250px; width:400px">
+
+                          
+                          <div class="desc">Select this Style!</div>
+                        </div>
+
+                        {% endfor %} -->
+                      
+                        <div class="submit_bottom">
+                        <input type='submit' class="smoothscroll btn btn--stroke" value='Submit' align="bottom" style='height: 85px; width: 320px; ' />
+                        </div>
+                    </form>
+                </div>
+                    
+                   
+              </div>
+
+          </div>
+        <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>upload here</title>
+</head>
+<body>
+	{% block content %}
+
+<div class='col-sm-6 col-sm-offset-3'>
+<form action='.' method='POST' enctype='multipart/form-data'>
+	{% csrf_token %} -->
+     <!-- {{ form.Contentfile }}
+    {{ form.Style_num }}
+    {{ form.Doodlefile}} -->
+    <!-- {{form.as_p}} -->
+    <!-- <button onclick="loadDoc()">Draw Doodle</button> -->
+    <!-- <input type="button" onclick="loadDoc()" name="">
+    <br>
+    {% for obj in list %}
+    	<img src="{{obj.Stylefile.url}}" onclick="foo({{obj.Style_num}})">
+    {% endfor %}
+    <input type='submit' class='btn btn-default' value='Submit' />
+</form>
+</div>
+{% endblock %}
+
+</body>
+</html>  -->
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var obj=JSON.parse(this.response);
+      document.getElementById("url_field").value = obj.doodle_url;
+      alert("hello world")
+    }
+  };
+  xhttp.open("POST", "../doodle/", true);
+  xhttp.send();
+  // xhttp.send();
+
+}
+function foo(style_num){
+	// alert(style_num)/
+	document.getElementById("style_num").value=style_num;
+}
+</script>
